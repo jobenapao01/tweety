@@ -57,7 +57,7 @@ const EditModal = () => {
 		} finally {
 			setIsLoading(false);
 		}
-	}, [bio, name, username, profileImage, coverImage, mutateFetchedUser]);
+	}, [bio, name, username, profileImage, coverImage, mutateFetchedUser, editModal]);
 
 	const bodyContent = (
 		<div className='flex flex-col gap-4'>
