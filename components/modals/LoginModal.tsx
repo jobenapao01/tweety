@@ -35,14 +35,14 @@ const LoginModal = () => {
 		} finally {
 			setIsLoading(false);
 		}
-	}, [loginModal, email, password, isLoading, loginModal, registerModal]);
+	}, [loginModal, email, password]);
 
 	const onToggle = useCallback(() => {
 		if (isLoading) return;
 
 		loginModal.onClose();
 		registerModal.onOpen();
-	}, []);
+	}, [loginModal, registerModal, isLoading]);
 
 	const bodyContent = (
 		<div className='flex flex-col gap-4'>
@@ -65,9 +65,8 @@ const LoginModal = () => {
 	const footerContent = (
 		<div className='text-neutral-400 text-center mt-4'>
 			<p>
-				Don't have an account?
+				Dont have an account?
 				<span onClick={onToggle} className='text-white cursor-pointer hover:underline'>
-					{' '}
 					Create an account
 				</span>
 			</p>
